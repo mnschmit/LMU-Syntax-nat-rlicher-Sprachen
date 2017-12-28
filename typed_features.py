@@ -55,4 +55,4 @@ class HierarchicalFeature(Feature):
             if type1 in self.hierarchy[type2]:
                 score[type1] += 1
 
-        return max(candidates, key=score.__getitem__, default=UnificationFailure)
+        return min(candidates, key=score.__getitem__, default=UnificationFailure)
